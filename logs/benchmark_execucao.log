@@ -1,0 +1,188 @@
+==================================================================
+    BENCHMARK DE SISTEMAS DE ARQUIVOS - ARTHUR E DANIEL
+==================================================================
+Início em: Thu Nov 19 10:54:16 -03 2026
+Dispositivo PA: /dev/loop0p1 (EXT4 - Bloco 1 KB)
+Dispositivo PB: /dev/loop0p2 (NTFS - Cluster 512 B)
+Cenário Grande: 5 arquivos de 1 GB
+Cenário Pequeno: 1000 arquivos de 1 KB
+Número de Repetições por Teste: 10
+==================================================================
+
+[1/3] Verificando e gerando datasets de teste...
+ -> Gerando arquivo base de 1 GB com cabeçalho PDF...
+    Criando cópia 1 de 1 GB...
+    Criando cópia 2 de 1 GB...
+    Criando cópia 3 de 1 GB...
+    Criando cópia 4 de 1 GB...
+    Criando cópia 5 de 1 GB...
+ -> Dataset Grande pronto: 24K (5 arquivos)
+ -> Gerando 1000 arquivos de 1 KB...
+ -> Dataset Pequeno pronto: 4.0M (1000 arquivos)
+
+[2/3] Preparando pontos de montagem...
+ -> Partição PA montada em /mnt/bench_pa
+ -> Partição PB montada em /mnt/bench_pb
+
+[3/3] Iniciando rodadas de benchmark...
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Grandes (5x1GB) em PA (EXT4, Bloco/Cluster: 1KB)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    0.020 s (    20 ms)
+  [Repetição 02/10] Tempo:    0.022 s (    22 ms)
+  [Repetição 03/10] Tempo:    0.022 s (    22 ms)
+  [Repetição 04/10] Tempo:    0.021 s (    21 ms)
+  [Repetição 05/10] Tempo:    0.024 s (    24 ms)
+  [Repetição 06/10] Tempo:    0.023 s (    23 ms)
+  [Repetição 07/10] Tempo:    0.021 s (    21 ms)
+  [Repetição 08/10] Tempo:    0.020 s (    20 ms)
+  [Repetição 09/10] Tempo:    0.021 s (    21 ms)
+  [Repetição 10/10] Tempo:    0.021 s (    21 ms)
+=> Média Grandes (5x1GB) (PA): 0.021 s (21 ms)
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Pequenos (1000x1KB) em PA (EXT4, Bloco/Cluster: 1KB)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    0.220 s (   220 ms)
+  [Repetição 02/10] Tempo:    0.243 s (   243 ms)
+  [Repetição 03/10] Tempo:    0.197 s (   197 ms)
+  [Repetição 04/10] Tempo:    0.240 s (   240 ms)
+  [Repetição 05/10] Tempo:    0.216 s (   216 ms)
+  [Repetição 06/10] Tempo:    0.220 s (   220 ms)
+  [Repetição 07/10] Tempo:    0.229 s (   229 ms)
+  [Repetição 08/10] Tempo:    0.206 s (   206 ms)
+  [Repetição 09/10] Tempo:    0.244 s (   244 ms)
+  [Repetição 10/10] Tempo:    0.195 s (   195 ms)
+=> Média Pequenos (1000x1KB) (PA): 0.221 s (221 ms)
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Grandes (5x1GB) em PB (NTFS, Bloco/Cluster: 512B)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    0.031 s (    31 ms)
+  [Repetição 02/10] Tempo:    0.025 s (    25 ms)
+  [Repetição 03/10] Tempo:    0.025 s (    25 ms)
+  [Repetição 04/10] Tempo:    0.025 s (    25 ms)
+  [Repetição 05/10] Tempo:    0.024 s (    24 ms)
+  [Repetição 06/10] Tempo:    0.024 s (    24 ms)
+  [Repetição 07/10] Tempo:    0.025 s (    25 ms)
+  [Repetição 08/10] Tempo:    0.024 s (    24 ms)
+  [Repetição 09/10] Tempo:    0.026 s (    26 ms)
+  [Repetição 10/10] Tempo:    0.024 s (    24 ms)
+=> Média Grandes (5x1GB) (PB): 0.025 s (25 ms)
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Pequenos (1000x1KB) em PB (NTFS, Bloco/Cluster: 512B)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    0.874 s (   874 ms)
+  [Repetição 02/10] Tempo:    0.957 s (   957 ms)
+  [Repetição 03/10] Tempo:    0.953 s (   953 ms)
+  [Repetição 04/10] Tempo:    0.954 s (   954 ms)
+  [Repetição 05/10] Tempo:    0.967 s (   967 ms)
+  [Repetição 06/10] Tempo:    1.774 s (  1774 ms)
+  [Repetição 07/10] Tempo:    1.652 s (  1652 ms)
+  [Repetição 08/10] Tempo:    1.716 s (  1716 ms)
+  [Repetição 09/10] Tempo:    1.752 s (  1752 ms)
+  [Repetição 10/10] Tempo:    1.619 s (  1619 ms)
+=> Média Pequenos (1000x1KB) (PB): 1.321 s (1321 ms)
+
+==================================================================
+                   TABELA FINAL DE RESULTADOS                     
+              Média de Tempo por Cópia (10 Repetições)            
+==================================================================
+| Cenário de Teste      | PA (EXT4 - Bloco 1KB) | PB (NTFS - Cluster 512B) |
+|------------------------|----------------------|----------------------|
+| Grandes (5 x 1GB)      |             0.021 s |             0.025 s |
+| Pequenos (1000 x 1KB)  |             0.221 s |             1.321 s |
+==================================================================
+
+[✓] Benchmark finalizado com sucesso em: Thu Nov 19 10:54:36 -03 2026
+[✓] Dados brutos salvos em: /mnt/c/Users/dk/OneDrive/Área de Trabalho/Trabalho Sergio SO/logs/benchmark_resultados.csv
+[✓] Log de execução salvo em: /mnt/c/Users/dk/OneDrive/Área de Trabalho/Trabalho Sergio SO/logs/benchmark_execucao.log
+==================================================================
+    BENCHMARK DE SISTEMAS DE ARQUIVOS - ARTHUR E DANIEL
+==================================================================
+Início em: Thu Nov 19 10:55:22 -03 2026
+Dispositivo PA: /dev/loop0p1 (EXT4 - Bloco 1 KB)
+Dispositivo PB: /dev/loop0p2 (NTFS - Cluster 512 B)
+Cenário Grande: 5 arquivos de 1 GB
+Cenário Pequeno: 1000 arquivos de 1 KB
+Número de Repetições por Teste: 10
+==================================================================
+
+[1/3] Verificando e gerando datasets de teste...
+ -> Dataset Grande pronto: 24K (5 arquivos de 1GB reais)
+ -> Dataset Pequeno pronto: 4.0M (1000 arquivos)
+
+[2/3] Preparando pontos de montagem...
+ -> Partição PA montada em /mnt/bench_pa
+ -> Partição PB montada em /mnt/bench_pb
+
+[3/3] Iniciando rodadas de benchmark...
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Grandes (5x1GB) em PA (EXT4, Bloco/Cluster: 1KB)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    8.035 s (  8035 ms)
+  [Repetição 02/10] Tempo:    3.222 s (  3222 ms)
+==================================================================
+    BENCHMARK DE SISTEMAS DE ARQUIVOS - ARTHUR E DANIEL
+==================================================================
+Início em: Thu Nov 19 10:56:14 -03 2026
+Dispositivo PA: /dev/loop0p1 (EXT4 - Bloco 1 KB)
+Dispositivo PB: /dev/loop0p2 (NTFS - Cluster 512 B)
+Cenário Grande: 5 arquivos de 1 GB
+Cenário Pequeno: 1000 arquivos de 1 KB
+Número de Repetições por Teste: 10
+==================================================================
+
+[1/3] Verificando e gerando datasets de teste...
+ -> Gerando arquivo base de 1 GB com dados reais (não-esparsos) e cabeçalho PDF...
+    Criando cópia 1 de 1 GB...
+    Criando cópia 2 de 1 GB...
+    Criando cópia 3 de 1 GB...
+    Criando cópia 4 de 1 GB...
+    Criando cópia 5 de 1 GB...
+ -> Dataset Grande pronto: 5.1G (5 arquivos de 1GB reais)
+ -> Dataset Pequeno pronto: 4.0M (1000 arquivos)
+
+[2/3] Preparando pontos de montagem...
+ -> Partição PA montada em /mnt/bench_pa
+ -> Partição PB montada em /mnt/bench_pb
+
+[3/3] Iniciando rodadas de benchmark...
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Grandes (5x1GB) em PA (EXT4, Bloco/Cluster: 1KB)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    5.943 s (  5943 ms)
+  [Repetição 02/10] Tempo:    5.129 s (  5129 ms)
+  [Repetição 03/10] Tempo:    4.431 s (  4431 ms)
+  [Repetição 04/10] Tempo:    4.816 s (  4816 ms)
+  [Repetição 05/10] Tempo:    5.554 s (  5554 ms)
+  [Repetição 06/10] Tempo:    5.343 s (  5343 ms)
+  [Repetição 07/10] Tempo:    4.939 s (  4939 ms)
+  [Repetição 08/10] Tempo:    5.766 s (  5766 ms)
+  [Repetição 09/10] Tempo:    5.125 s (  5125 ms)
+  [Repetição 10/10] Tempo:    5.067 s (  5067 ms)
+=> Média Grandes (5x1GB) (PA): 5.211 s (5211 ms)
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Pequenos (1000x1KB) em PA (EXT4, Bloco/Cluster: 1KB)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:    0.354 s (   354 ms)
+  [Repetição 02/10] Tempo:    0.292 s (   292 ms)
+  [Repetição 03/10] Tempo:    0.218 s (   218 ms)
+  [Repetição 04/10] Tempo:    0.347 s (   347 ms)
+  [Repetição 05/10] Tempo:    0.228 s (   228 ms)
+  [Repetição 06/10] Tempo:    0.256 s (   256 ms)
+  [Repetição 07/10] Tempo:    0.260 s (   260 ms)
+  [Repetição 08/10] Tempo:    0.287 s (   287 ms)
+  [Repetição 09/10] Tempo:    0.245 s (   245 ms)
+  [Repetição 10/10] Tempo:    0.257 s (   257 ms)
+=> Média Pequenos (1000x1KB) (PA): 0.274 s (274 ms)
+
+------------------------------------------------------------------
+>>> EXECUTANDO: Grandes (5x1GB) em PB (NTFS, Bloco/Cluster: 512B)
+------------------------------------------------------------------
+  [Repetição 01/10] Tempo:  180.921 s (180921 ms)
