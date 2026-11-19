@@ -126,6 +126,6 @@ O **EXT4 superou o NTFS em todos os cenários** (~3.6x mais rápido em arquivos 
 ---
 
 ## 👥 Autores
-* **Arthur**
-* **Daniel**  
+* **Arthur Pimentel**
+* **Daniel Kaynann**  
 *Disciplina de Sistemas Operacionais — 2026*
